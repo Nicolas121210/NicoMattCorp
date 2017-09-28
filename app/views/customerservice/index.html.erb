@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <style>
+          p1 {
+              color:black;
+              font:Times;
+              font-size:30px;
+          }  
+          p2 {
+              color:black;
+              font:times;
+              font-size:20px;
+              
+          }
+          li a:hover {
+            background: black;
+            color: blue;
+        }
+        li {
+            float: left;
+        }
+        li a {
+            display: block;
+            color: blue;
+            text-align: center;
+            padding: 16px;
+            text-decoration: none;
+        }
+        ul {
+            list-style-type: none;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+        </style>
+        <script>
+            
+        </script>
+        <p1><center><b>Customer Service</b></center></p1>
+    </head>
+    <body>
+        <p2><br>Welcome to the NicoMatt Corp customer service!<br>
+        </p2>
+        <p3>Here at NicoMatt Corp, we want you to have the best experience you can possibly imagine.<br>
+        this is why we have customer service. Our customer service is simple but efficient.<br>
+        just click on this link (it is not a spam) and it will redirect you to email:</p3>
+        <a href="mailto:nicomattcorpofficial@gmail.com">E-mail</a>
+        <p><br /> <ul>
+            <li><%= link_to 'Main Menu', controller: 'welcome'%></li>
+        </ul>
+        
+    </body>
+</html>

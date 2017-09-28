@@ -1,0 +1,111 @@
+<style>
+    .Person1 {
+        z-index: 1;
+    }
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+        /* Variables */
+        var sideopen=false; 
+        var gold = 0;
+        var Gender = "lol";
+        var Gen = Gender.toLowerCase();
+        var Genisdefined = false;
+        
+        /* Hidden Decor */
+        $("#sideopen").hide();
+        $("#Click2").hide();
+        $("#Click3").hide();
+        $("#Click4").hide();
+        $("#Start").hide();
+        $("#Person1Text1m").hide();
+        $("#Person1Text1f").hide();
+        
+        while (Genisdefined == false) {
+            if (Gen == "m" || Gen == "f") {
+                Genisdefined = true;
+            } else if (Gen != "m" || Gen != "f") {
+                Gender = prompt("What is your gender? Enter M for Male and F for Female.");
+                Gen = Gender.toLowerCase();
+            }
+        }
+        $("#sideclose").click(function(){
+            $("#sidebar").slideUp();
+            $("#sideclose").hide();
+            $("#sideopen").show();
+        });
+        
+        $("#sideopen").click(function(){
+            $("#sidebar").slideDown();
+            $("#sideopen").hide();
+            $("#sideclose").show();
+            if (sideopen){
+                $("#sideclose").hide();
+            }
+        });
+        
+        $("#Click1").click(function(){
+            alert("You got a new quest! Open the sidebar to see it!");
+            $("#Click1").hide();
+            $("#Click2").show();
+            $("#sideopen").hide();
+            $("#Click3").show();
+        });
+        
+        $("#Click2").click(function(){
+            alert("Quest complete! You got 100 gold!");
+            $("Click2").hide();
+            gold += 100;
+        });
+        
+        $("#Click3").click(function(){
+            $("#Click3").hide();
+            $("#Click4").show();
+            $("#sideopen").show();
+            $("#Click3").hide();
+            sideopen = true;
+        });
+        
+        $("#Click3").click(function() {
+            setInterval(Interval(), 3000);
+            function Interval() {
+                $("#Click4").hide();
+                $("#Click2").hide();
+                $("img").css("opacity", "1");
+                if (Gen == "m") {
+                    $("#Person1Text1m").show();
+                } else if (Gen == "f") {
+                    $("#Person1Text1f").show();
+                }    
+            }
+        });
+        
+    });
+</script>
+
+<button id="sideopen" style="background-color:silver; width:100px; height:100px; position:absolute; top:10px; right:10px"><center>Open Sidebar</center></button>
+
+<button id="sideclose" style="background-color:silver; width:100px; height:100px; position:absolute; top:10px; right:10px"><center>Close Sidebar</center></button>
+
+<button id="Start" style="background-color:silver; width:100px;height:100px; position: absolute; top:10px; right:10px"><center>Start Game</center></button>
+
+<div id="sidebar" style="background-color:black; width:21%; height:101%; position:absolute; top:-1%; left:-1%">  
+
+    <button style="position: absolute; top: 10px; left: 10px"><%= link_to 'Main Menu', controller: 'welcome'%></button>
+    
+    <button id="Click2" style="position:absolute; top:30px; left: 10px">Quest 1: Start Game</button>
+    
+</div>
+
+<button id="Click1">I am a button</button>
+
+<button id="Click3">I stole your button</button>
+
+<button id="Click4">Fine! But I get to keep the other one then.</button>
+
+<span class="Person1" style="position:absolute; bottom:10px; right:10px;"><img src="/assets/Person1.png" style="opacity:0"/></span>
+
+<p id="Person1Text1m" style="position:absolute; right: 164px; bottom: 240px; background-color: silver">Young man! I must say, I am surprised! No one has ever made the Button Theif return a button!</p>
+
+<p id="Person1Text1f" style="position:absolute; right: 164px; bottom: 240px; background-color: silver">Young Lady! I must say, I am surprised! No one has ever made the Button Theif return a button!</p>

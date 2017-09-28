@@ -1,0 +1,43 @@
+<html>
+    <javaCSS>
+        <style>
+        p1 {
+            font-size: 40px;
+        }   
+        li a:hover {
+            background: black;
+            color: blue;
+        }
+        li {
+            float: left;
+        }
+        li a {
+            display: block;
+            color: blue;
+            text-align: center;
+            padding: 16px;
+            text-decoration: none;
+        }
+        ul {
+            list-style-type: none;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+        </style>
+        <script>
+         
+        </script>
+        <p1 onclick="Refresh()"><center><span style="color:Red">Nico</span><span style="color:navy">Matt</span><span style="color:silver">Corp </span>Official Website</center></p1>
+        <script>
+             function Refresh() {
+                 window.location.replace('http://nicomattcorp-nicolas1212101.c9users.io/');
+             }
+        </script>
+        <ul>
+            <li><%= link_to 'Articles', controller: 'articles'%></li>
+            <li><%= link_to 'Customer Service', controller: 'customerservice'%></li>
+            <li><%= link_to 'Button Stealer', controller: 'game1'%></li>
+        </ul>
+    </javaCSS>
+</html>
